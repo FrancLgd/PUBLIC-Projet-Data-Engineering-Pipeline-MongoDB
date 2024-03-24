@@ -1,0 +1,7 @@
+airflow/*
+!airflow/dags/daily_update.py
+mongosh/
+venv/
+data/
+mongodb-database-tools/
+config/secrets.ini

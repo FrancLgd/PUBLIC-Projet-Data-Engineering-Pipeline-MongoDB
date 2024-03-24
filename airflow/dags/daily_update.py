@@ -30,13 +30,16 @@ def dag_update_6m_best_rated():
     def get_run_command(**kwargs):
 
         # Obtenir la date du jour
-        date_j = datetime.strptime(kwargs["date_j"], "%Y-%m-%d").strftime("%Y-%m-%d")
+        date_run = datetime.strptime(kwargs["date_run"], "%Y-%m-%d").strftime("%Y-%m-%d")
 
-        return f"cd {dossier_courant} && python ./src/update_6m_best_rated.py --DATE_RUN {date_j}"
+        # Formater la commande
+        res_command = f"cd {dossier_courant} && python ./src/update_6m_best_rated.py --DATE_RUN {date_run}"
+
+        return res_command
     
     run_script_task = BashOperator(
         task_id='run_script_task',
-        bash_command=get_run_command(date_j="{{ ds }}")
+        bash_command=get_run_command(date_run="{{ ds }}")
     )
         
     run_script_task

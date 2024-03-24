@@ -160,7 +160,7 @@ Le dag qui définit la tâche quotidienne est `./airflow/dags/daily_update_dag.p
 Si on fait un backfilling d'une date passée quelconque en entrant
 
 ```shell
-airflow dags backfill -s 2015-04-22 -e 2015-04-23 daily_update
+airflow dags backfill -s 2015-02-15 -e 2015-02-16 daily_update
 ```
 
 , on peut ensuite constater que le job Airflow a bien fonctionné

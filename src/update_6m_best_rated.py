@@ -17,8 +17,9 @@ date_du_jour = datetime.now()
 # Arguments en ligne de commandes
 parser = argparse.ArgumentParser()
 # parser.add_argument('--DATE_RUN', help = "Date de run", type = str, default = "2015-02-15")
+# args = parser.parse_args("")
 parser.add_argument('--DATE_RUN', help = "Date de run", type = str, default = date_du_jour.strftime("%Y-%m-%d"))
-args = parser.parse_args("")
+args = parser.parse_args()
 
 # Fichier de configuration
 config = configparser.ConfigParser()
